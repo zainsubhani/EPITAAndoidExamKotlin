@@ -44,20 +44,37 @@ class WeatherDetailsActivity : AppCompatActivity() {
     }
 
     private fun searchCities(query: String) {
-        val results = citiesList.filter { it.name.contains(query, ignoreCase = true) }
+        // Filter results that include the query
+        val partialMatches = citiesList.filter { it.name.contains(query, ignoreCase = true) }
+
+        // Look for exact matches
+        val exactMatches = citiesList.filter { it.name.equals(query, ignoreCase = true) }
 
         // Clear previous results
         resultContainer.removeAllViews()
 
         when {
-            results.isEmpty() -> statusText.text = "No results found for \"$query\"."
-            results.size > 4 -> statusText.text = "Too many results. Please refine your search."
+            exactMatches.isNotEmpty() -> {
+                // Show exact match if available (takes priority when results are too many)
+                statusText.text = "${exactMatches.size} exact result(s) found:"
+                displayResultButtons(exactMatches)
+            }
+            partialMatches.isEmpty() -> {
+                // No results found
+                statusText.text = "No results found for \"$query\"."
+            }
+            partialMatches.size > 4 -> {
+                // Too many results: ask the user to refine the search
+                statusText.text = "Too many results. Please refine your search."
+            }
             else -> {
-                statusText.text = "${results.size} result(s) found:"
-                displayResultButtons(results)
+                // Show all partial matches if 4 or fewer
+                statusText.text = "${partialMatches.size} result(s) found:"
+                displayResultButtons(partialMatches)
             }
         }
     }
+
 
     private fun displayResultButtons(results: List<City>) {
         for (city in results) {
