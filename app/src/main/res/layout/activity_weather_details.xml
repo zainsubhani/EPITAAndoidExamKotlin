@@ -1,23 +1,81 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/welcome_to_weather_details_screen"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#7B1FA2" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
 
-    <!-- Custom Back Button -->
-    <Button
-        android:id="@+id/back_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/back"
-        android:layout_marginTop="16dp"/>
-</LinearLayout>
+        <!-- Header Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello Weather"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#7B1FA2"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select City"
+            android:textSize="24sp"
+            android:textColor="#7B1FA2"
+            android:fontFamily="cursive"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Search Input -->
+        <EditText
+            android:id="@+id/editTextCityName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter city name"
+            android:padding="12dp"
+            android:backgroundTint="#7B1FA2"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <!-- Search Button -->
+        <Button
+            android:id="@+id/buttonSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search cities in DB"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#7B1FA2"
+            android:layout_marginTop="12dp" />
+
+        <!-- Divider Line -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#7B1FA2"
+            android:layout_marginTop="8dp" />
+
+        <!-- Status Text -->
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:layout_marginTop="8dp" />
+
+        <!-- Search Results Buttons -->
+        <LinearLayout
+            android:id="@+id/resultContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="8dp">
+            <!-- Buttons will be added dynamically -->
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
