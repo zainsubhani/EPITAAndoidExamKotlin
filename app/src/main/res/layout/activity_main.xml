@@ -35,11 +35,15 @@
 
         <!-- Weather Image -->
         <ImageView
+            android:id="@+id/weather_image"
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:src="@drawable/weather_image"
         android:contentDescription="@string/weather_illustration"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true" />
+            />
 
         <!-- Footer -->
         <TextView

@@ -3,4 +3,7 @@
     <string name="epita_logo">EPITA Logo</string>
     <string name="weather_illustration">Weather Illustration</string>
     <string name="made_at">Made at</string>
+    <string name="title_activity_weather_details">WeatherDetailsActivity</string>
+    <string name="welcome_to_weather_details_screen">Welcome to Weather Details Screen!</string>
+    <string name="back">Back</string>
 </resources>

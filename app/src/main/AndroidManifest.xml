@@ -13,6 +13,11 @@
         android:theme="@style/Theme.WeatherAppZainSubhani"
         tools:targetApi="31">
         <activity
+            android:name=".WeatherDetailsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_weather_details"
+            android:theme="@style/Theme.WeatherAppZainSubhani" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
