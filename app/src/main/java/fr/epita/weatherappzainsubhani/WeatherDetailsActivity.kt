@@ -1,5 +1,6 @@
 package fr.epita.weatherappzainsubhani
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.*
@@ -84,8 +85,12 @@ class WeatherDetailsActivity : AppCompatActivity() {
                 resources.displayMetrics.widthPixels / 2, // 50% of screen width
                 ViewGroup.LayoutParams.WRAP_CONTENT
             ).apply { topMargin = 8 }
+
             button.setOnClickListener {
-                Toast.makeText(this, "Opening weather for ${city.name}", Toast.LENGTH_SHORT).show()
+                // Open CityWeatherActivity and pass city data
+                val intent = Intent(this, CityWeatherActivity::class.java)
+                intent.putExtra("CITY_NAME", city.name)
+                startActivity(intent)
             }
             resultContainer.addView(button)
         }

@@ -11,4 +11,6 @@
     <string name="enter_city_name">Enter city name</string>
     <string name="search_19638_cities_in_db">Search 19638 cities in DB</string>
     <string name="cities_found_in_database">Cities found in database:</string>
+    <string name="title_activity_city_weather">CityWeatherActivity</string>
+    <string name="weather_data_will_appear_here">Weather data will appear here</string>
 </resources>
