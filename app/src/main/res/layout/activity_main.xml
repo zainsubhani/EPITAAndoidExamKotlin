@@ -1,0 +1,65 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:gravity="center_horizontal"
+        tools:ignore="ExtraText">
+
+        <!-- App Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello Weather"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#7B1FA2"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"/>
+
+        <!-- Subtitle -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="An application by: Zain Subhani"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:gravity="center"
+            android:paddingTop="8dp"/>
+
+        <!-- Weather Image -->
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/weather_image"
+        android:contentDescription="@string/weather_illustration"
+        android:layout_marginTop="16dp"/>
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/made_at"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:paddingTop="16dp"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:src="@drawable/epita_logo"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/epita_logo"
+            android:onClick="openEPITAWebsite" />
+        android:contentDescription="@string/epita_logo"/>
+
+    </LinearLayout>
+</ScrollView>
